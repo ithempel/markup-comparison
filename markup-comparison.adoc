@@ -1,0 +1,378 @@
+= Markup Comparison
+Sebastian Hempel <shempel@it-hempel.de>
+:toc:
+:toc-placement: preamble
+
+The goal of this document is to compare different markup languages. The comparison can be used to easily switch between the different languages. The document compares the unique features of the languages. There will be no documentation of special features only found in a single Markup.
+
+For now the document covers the following markup languages:
+
+* http://daringfireball.net/projects/markdown/basics[Markdown^]
+* https://www.mediawiki.org/wiki/Help:Formatting[MediaWiki^]
+* http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc^]
+
+For the Markdown language not only the standard syntax will be used. The document also references the https://help.github.com/articles/github-flavored-markdown[GitHub Flavored Markdown^] syntax enhancements.
+
+You are free to add more markup languages to this comparison.
+
+IMPORTANT: This work is licensed under a Creative Commons Attribution 4.0 international license (http://creativecommons.org/licenses/by/4.0/[CC-BY-SA 4.0^]).
+
+== Document Structure
+
+The structure of a document is made out of one or more sections. Section can be hierarchical. Often the initial section is treated as the title of the document.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+# Level 1 Section
+
+## Level 2 Section
+
+### Level 3 Section
+----
+
+a|
+----
+= Document Title
+FirstName LastName <email>
+
+== Level 1 Section
+
+=== Level 2 Section
+
+==== Level 3 Section
+----
+
+a|
+----
+= Document Title =
+
+== Level 1 Section ==
+
+=== Level 2 Section ===
+
+==== Level 3 Section ====
+----
+|===
+
+== Formatted Text
+
+The languages use "special characters" to allow the formatting like *bold*, _italic_ or +monospace+.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+**bold**
+__bold__
+----
+a|
+----
+*bold*
+----
+a|
+----
+'''bold'''
+----
+
+a|
+----
+*italic*
+_italic_
+----
+a|
+----
+_italic_
+----
+a|
+----
+''italic''
+----
+
+a|
+----
+`monospace`
+----
+a|
+----
++monospace+
+`monospace`
+----
+a|
+----
+<tt>monospace</tt>
+<code>monospace</code>
+----
+|===
+
+== Unordered List
+
+The format for unordered list are very similar. Nealry all languages allow more then one level for the list items.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+* list item
+* another list item
+* and another list item
+
++ list item
++ another list item
++ and another list item
+
+- list item
+- another list item
+- and another list item
+----
+
+a|
+----
+* list item
+* another list item
+** list item in next level
+* and another list item
+
+- list item
+- another list item
+- and another list item
+----
+
+a|
+----
+* list item
+* another list item
+** list item in next level
+* and another list item
+----
+
+|===
+
+== Ordered List
+
+The format for an ordered list are very similar. There is also the possibility to make a multi-level ordered list.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+1. first item
+2. second item
+3. third item
+
+1. first item
+1. second item
+1. third item
+----
+
+a|
+----
+. first item
+. second item
+.. first subitem of an item
+. third item
+----
+
+a|
+----
+# first item
+# second item
+## first subitem of an item
+# third item
+----
+
+|===
+
+== Definition List
+
+Markdown does not support definition lists. It's possible to use direct HTML tags for that. All other languages support the definition list with their own syntax.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+|n/a
+
+a|
+----
+label1:: Description of label1
+label2:: Description of label2
+label3:: Description of label3
+----
+
+a|
+----
+:label1
+: Description of label1
+:label2
+: Description of label2
+:label3
+: Description of label3
+----
+
+|===
+
+== Links
+
+Only links to external (URLs) are compared. Some languages also have the possibility to link to internal anchors or files.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+This is a [link to Github](https://github.com/ "Title").
+----
+
+a|
+----
+This is a https://github.com/[link to Github].
+----
+
+a|
+----
+This is a [https://github.com/ link to Github].
+----
+
+|===
+
+== Block Quotes
+
+Block quotes are used to emphasize a paragraph. The text inside a block will be formatted like any other text.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+> This ist a block
+> quote.
+
+> This is also an
+block quote.
+----
+
+a|
+----
+____
+This is a block quote.
+____
+----
+
+a|
+----
+<blockquote>
+This is a block quote.
+</blockquote>
+----
+
+|===
+
+== Code Blocks
+
+Code blocks are used to print out given text in the same format as entered. There will be no additional formatting of the text inside a code block.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+    The code block is indented
+    by at least 4 spaces
+    or 1 tab.
+    
+```
+The block can also be enclosed by fences `.
+```
+----
+
+a|
+....
+  The code block is indented
+  by at least 2 spaces.
+  
+----
+The block can also be
+enclosed by -.
+----
+
+a|
+----
+<code>
+This is a code block in MediaWiki.
+</code>
+----
+
+|===
+
+== Tables
+
+Tables cannot be easily formatted with a markup language. The syntax of the different languages tries to build a kind of table drawing style.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+Column 1 \| Column 2
+-------- \| --------
+Cell 1   \| Cell 2
+Cell 3   \| Cell 4
+----
+
+a|
+----
+\|===
+\|Column1 \|Column2
+
+\|Cell 1
+\|Cell 2
+
+\|Cell 3
+\|Cell 4
+
+\|===
+----
+
+a|
+----
+{\|
+\|Column1\|\|Column2
+\|-
+\|Cell 1\|\|Cell 2
+\|-
+\|Cell 3
+\|Cell 4
+\|}
+----
+
+|===
+
+== Images
+
+Depending on the markup languages images can be referenced with an absolute patch. It's also possible to reference pictures in a base dir. The format of the pictures must be supported by the used browser / viewer.
+
+|===
+|Markdown |AsciiDoc |MediaWiki
+
+a|
+----
+![alt text](/path/to/img.jpg)
+----
+
+a|
+----
+image::img.jpg[alt text]
+----
+
+a|
+----
+[[File:img.jpg\|\|alt text]]
+----
+
+|==
+
