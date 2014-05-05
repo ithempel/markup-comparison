@@ -176,6 +176,11 @@ a|
 . second item
 .. first subitem of an item
 . third item
+
+[loweralpha]
+. first item
+. second item
+. third item
 ----
 
 a|
@@ -297,7 +302,7 @@ a|
   
 ----
 The block can also be
-enclosed by -.
+enclosed by 4 - or . chars.
 ----
 
 a|
