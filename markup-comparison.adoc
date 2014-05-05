@@ -359,7 +359,7 @@ a|
 
 == Images
 
-Depending on the markup languages images can be referenced with an absolute patch. It's also possible to reference pictures in a base dir. The format of the pictures must be supported by the used browser / viewer.
+Depending on the markup languages images can be referenced with an absolute path. It's also possible to reference pictures in a base dir. The format of the pictures must be supported by the used browser / viewer.
 
 |===
 |Markdown |AsciiDoc |MediaWiki
