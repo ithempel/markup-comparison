@@ -98,7 +98,6 @@ a|
 ----
 a|
 ----
-+monospace+
 `monospace`
 ----
 a|
