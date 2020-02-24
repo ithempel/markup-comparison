@@ -10,4 +10,4 @@ For now the document covers the following markup languages:
 * [Markdown](http://daringfireball.net/projects/markdown/basics)
 * [MediaWiki](https://www.mediawiki.org/wiki/Help:Formatting)
 * [AsciiDoc](http://asciidoctor.org/docs/asciidoc-writers-guide/)
-
+* [restructuredText](http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)

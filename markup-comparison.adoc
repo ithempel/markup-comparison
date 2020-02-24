@@ -22,7 +22,7 @@ IMPORTANT: This work is licensed under a Creative Commons Attribution 4.0 intern
 The structure of a document is made out of one or more sections. Section can be hierarchical. Often the initial section is treated as the title of the document.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -55,6 +55,24 @@ a|
 
 ==== Level 3 Section ====
 ----
+
+a|
+----
+##############
+Document Title
+##############
+
+***************
+Level 1 section
+***************
+
+Level 2 section
+===============
+
+Level 3 section
+---------------
+----
+
 |===
 
 == Formatted Text
@@ -62,7 +80,7 @@ a|
 The languages use "special characters" to allow the formatting like *bold*, _italic_ or +monospace+.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -76,6 +94,11 @@ a|
 a|
 ----
 '''bold'''
+----
+
+a|
+----
+**bold**
 ----
 
 a|
@@ -94,6 +117,11 @@ a|
 
 a|
 ----
+*italic*
+----
+
+a|
+----
 `monospace`
 ----
 a|
@@ -105,6 +133,10 @@ a|
 <tt>monospace</tt>
 <code>monospace</code>
 ----
+a|
+----
+``monospace``
+----
 |===
 
 == Unordered List
@@ -112,7 +144,7 @@ a|
 The format for unordered list are very similar. Nealry all languages allow more then one level for the list items.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -149,6 +181,17 @@ a|
 * and another list item
 ----
 
+a|
+----
+* list item
+* another list item
+  ** list item in next level
+* and another list item
+
+- list item
+- another list item
+- and another list item
+----
 |===
 
 == Ordered List
@@ -184,12 +227,29 @@ a|
 
 a|
 ----
-# first item
-# second item
-## first subitem of an item
-# third item
+* list item
+* another list item
+  * list item in next level
+* and another list item
+
+- list item
+- another list item
+- and another list item
 ----
 
+a|
+----
+1. first item
+2. second item
+
+  a. list item in next level
+
+3. third item
+
+a. first item
+#. second item
+#. third item
+----
 |===
 
 == Definition List
@@ -197,7 +257,7 @@ a|
 Markdown does not support definition lists. It's possible to use direct HTML tags for that. All other languages support the definition list with their own syntax.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 |n/a
 
@@ -218,6 +278,18 @@ a|
 : Description of label3
 ----
 
+a|
+----
+label1
+  Description of label1
+
+*label2*
+  Description of label2
+
+**label3**
+  Description of label3
+----
+
 |===
 
 == Links
@@ -225,7 +297,7 @@ a|
 Only links to external (URLs) are compared. Some languages also have the possibility to link to internal anchors or files.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -242,6 +314,11 @@ a|
 This is a [https://github.com/ link to Github].
 ----
 
+a|
+----
+This is a `link to Github <https://github.com/>`_.
+----
+
 |===
 
 == Block Quotes
@@ -249,7 +326,7 @@ This is a [https://github.com/ link to Github].
 Block quotes are used to emphasize a paragraph. The text inside a block will be formatted like any other text.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -274,6 +351,12 @@ This is a block quote.
 </blockquote>
 ----
 
+a|
+----
+    This is a block quote.
+        And this is another (nested) block quote.
+----
+
 |===
 
 == Code Blocks
@@ -281,14 +364,14 @@ This is a block quote.
 Code blocks are used to print out given text in the same format as entered. There will be no additional formatting of the text inside a code block.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
     The code block is indented
     by at least 4 spaces
     or 1 tab.
-    
+
 ```
 The block can also be enclosed by fences `.
 ```
@@ -298,7 +381,7 @@ a|
 ....
   The code block is indented
   by at least 2 spaces.
-  
+....
 ----
 The block can also be
 enclosed by 4 - or . chars.
@@ -311,6 +394,14 @@ This is a code block in MediaWiki.
 </code>
 ----
 
+a|
+----
+::
+
+  This is a code block in restructuredText.
+
+----
+
 |===
 
 == Tables
@@ -318,7 +409,7 @@ This is a code block in MediaWiki.
 Tables cannot be easily formatted with a markup language. The syntax of the different languages tries to build a kind of table drawing style.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -354,6 +445,17 @@ a|
 \|}
 ----
 
+a|
+----
++-----------+-----------+
+| Column 1 \| Column 2 \|
++===========+===========+
+\| Cell 1  \| Cell 2   \|
++-----------+-----------+
+\| Cell 3  \| Cell 4   \|
++-----------+-----------+
+----
+
 |===
 
 == Images
@@ -361,7 +463,7 @@ a|
 Depending on the markup languages images can be referenced with an absolute path. It's also possible to reference pictures in a base dir. The format of the pictures must be supported by the used browser / viewer.
 
 |===
-|Markdown |AsciiDoc |MediaWiki
+|Markdown |AsciiDoc |MediaWiki |restructuredText
 
 a|
 ----
@@ -377,6 +479,12 @@ a|
 ----
 [[File:img.jpg\|\|alt text]]
 ----
+
+a|
+---
+.. image:: img.jpg
+   :alt: alt text
+---
 
 |==
 
