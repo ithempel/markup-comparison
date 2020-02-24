@@ -10,6 +10,7 @@ For now the document covers the following markup languages:
 * http://daringfireball.net/projects/markdown/basics[Markdown^]
 * https://www.mediawiki.org/wiki/Help:Formatting[MediaWiki^]
 * http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc^]
+* http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html[restructuredText]
 
 For the Markdown language not only the standard syntax will be used. The document also references the https://help.github.com/articles/github-flavored-markdown[GitHub Flavored Markdown^] syntax enhancements.
 
